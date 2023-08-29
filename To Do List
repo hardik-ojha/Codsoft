@@ -1,0 +1,50 @@
+#To Do List
+
+from tkinter import *
+
+win=Tk()
+
+
+def add_task():
+    def del_task():
+        b.destroy()
+        c.destroy()
+        d.destroy()
+    def edit():
+        k=a
+        
+        entry.delete(0, END)
+        entry.insert(0,k)
+
+        return del_task()
+        
+        
+         
+    a=entry.get()
+    b=Label(win,text=a)
+    b.pack(anchor="w")
+    c=Button(win,text="Edit",command=edit)
+    c.pack(anchor="c")
+    d=Button(win,text="delete", command=del_task)
+    d.pack(anchor="c")
+    entry.delete(0, END)
+    
+    
+win.title("To Do List")
+win.geometry("250x300")
+
+label=Label(win,text="Enter Task")
+label.pack(anchor="w")
+
+entry=Entry(win)
+entry.pack(anchor="w")
+
+Sumit_button=Button(win,text="Sumit",command=add_task)
+Sumit_button.place(x=140,y=20)
+
+
+
+
+
+
+win.mainloop()
